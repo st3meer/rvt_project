@@ -1,5 +1,6 @@
 from parseByFilter import parseByFilter
 from ParseFilterOptions import parseFilterOptions
+from writeToFile import writeToFileCSV
 
 logo = '''                
                                   
@@ -28,3 +29,6 @@ print(logo)
 print("WELCOME TO SScraper")
 print("please enter valid SS.LV car search URL:")
 print("example: https://www.ss.com/lv/transport/cars/bmw/")
+#url = input()
+url = 'https://www.ss.com/lv/transport/cars/bmw/'
+writeToFileCSV(parseByFilter(url, 500, 2000, None, None, None, None, None, None, None, None))
