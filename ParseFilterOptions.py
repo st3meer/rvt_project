@@ -1,7 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
 
-def parseFilterOptions(urlInput):
+#get lists of possible options for each filter
+
+def parseFilterOptions(urlInput): 
     # Parse the filter options
     # Return a dictionary of filter options
     response = requests.get(urlInput)

@@ -1,13 +1,18 @@
 import os
-def writeToFileCSV(links_got_list): #create a csv file for internal use
-    if os.path.exists("linkListOld.csv"):
-        os.remove("linkListOld.csv")
-    if os.path.exists("linksList.csv"):
-        os.rename("linksList.csv", "linkListOld.csv")    
-    with open('linksList.csv', 'w', encoding="utf-16") as f:
+def writeToFileCSV(filename, links_got_list): #create a csv file for internal use
+    file1 = filename + ".csv"
+    file2 = filename + "Old.csv"
+
+    if os.path.exists(file2):
+        os.remove(file2)
+    if os.path.exists(file1):
+        os.rename(file1, file2)    
+    with open(file1, 'w', encoding="utf-16") as f:
         for item in links_got_list:
             for i in item:
-                f.write(i.replace('U+000A', " ") + ';')
+                i = i.replace('\n', " ")
+                i = i.replace('\r', " ")
+                f.write(i + ';')
             f.write('\n')
 
 def writeToFileTXT(links_got_list): #create a user readable result list
@@ -27,3 +32,4 @@ def writeConfigFile(url, priceMin, priceMax, yearMin, yearMax, engOptMin, engOpt
         f.write("gbxType: " + str(gbxType) + '\n')
         f.write("bodyOpt: " + str(bodyOpt) + '\n')
         f.write("clrOpt: " + str(clrOpt) + '\n')
+
