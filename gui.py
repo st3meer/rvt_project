@@ -8,11 +8,11 @@ def new_task():
     ui.setWindowTitle('New Task')
 
     upd_options = { #update time options and their values
-        "5 min": "1",
-        "10 min": "2",
-        "20 min": "3",
-        "30 min": "4",
-        "1 hour": "5",
+        "5 min": "300",
+        "10 min": "600",
+        "20 min": "1200",
+        "30 min": "1800",
+        "1 hour": "3600",
     }
 
     ui.update_time_cbox.addItems(upd_options.keys()) #add update time options to the combobox
@@ -43,6 +43,10 @@ def new_task():
 
 
     def save():
+        if ui.filter_box.isEnabled() == False:
+            print("Link not provided")
+            link_error.show()
+            return
         save_array = []
         save_array.append(ui.name_field.text()) #name
         save_array.append(ui.link_field.text()) #link
