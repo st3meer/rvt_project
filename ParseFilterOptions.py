@@ -59,4 +59,5 @@ def parseFilterOptions(urlInput):
     for option in form_clrType.find_all('option'):
         optClrType[option.text] = option['value']
 
-    return 0
+    return_array = [optYearMin, optYearMax, optEngDispMin, optEngDispMax, optEngType, optGbxType, optBodyType, optClrType]
+    return return_array

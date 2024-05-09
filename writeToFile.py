@@ -19,17 +19,19 @@ def writeToFileTXT(links_got_list): #create a user readable result list
     with open('linksListUser.txt', 'w', encoding="utf-16") as f:
         f.write("in development")
 
-def writeConfigFile(url, priceMin, priceMax, yearMin, yearMax, engOptMin, engOptMax, engType, gbxType, bodyOpt, clrOpt):
-    with open('config.txt', 'w', encoding="utf-16") as f:
-        f.write("url: " + url + '\n')
-        f.write("priceMin: " + str(priceMin) + '\n')
-        f.write("priceMax: " + str(priceMax) + '\n')
-        f.write("yearMin: " + str(yearMin) + '\n')
-        f.write("yearMax: " + str(yearMax) + '\n')
-        f.write("engOptMin: " + str(engOptMin) + '\n')
-        f.write("engOptMax: " + str(engOptMax) + '\n')
-        f.write("engType: " + str(engType) + '\n')
-        f.write("gbxType: " + str(gbxType) + '\n')
-        f.write("bodyOpt: " + str(bodyOpt) + '\n')
-        f.write("clrOpt: " + str(clrOpt) + '\n')
+def writeConfigFile(name, url, upd_period, priceMin, priceMax, yearMin, yearMax, engOptMin, engOptMax, engType, gbxType, bodyOpt, clrOpt):
+    with open(name + ".config", 'w', encoding="utf-16") as f:
+        f.write(str(name) + "\n")
+        f.write(str(url + '\n'))
+        f.write(str(upd_period) + '\n')
+        f.write(str(priceMin) + '\n')
+        f.write(str(priceMax) + '\n')
+        f.write(str(yearMin) + '\n')
+        f.write(str(yearMax) + '\n')
+        f.write(str(engOptMin) + '\n')
+        f.write(str(engOptMax) + '\n')
+        f.write(str(engType) + '\n')
+        f.write(str(gbxType) + '\n')
+        f.write(str(bodyOpt) + '\n')
+        f.write(str(clrOpt) + '\n')
 

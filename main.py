@@ -30,7 +30,7 @@ print("WELCOME TO SScraper")
 print("please enter valid SS.LV car search URL:")
 print("example: https://www.ss.com/lv/transport/cars/bmw/")
 #url = input()
-url = 'https://www.ss.lv/lv/transport/cars/bmw/5-series/'
+url = 'https://www.ss.com/en/transport/cars/bmw/5-series/'
 filename = 'linksList'
 writeToFileCSV(filename, parseByFilter(url, 500, 3500, None, None, None, None, None, None, None, None))
 #parseFilterOptions(url) #for testing purposes
