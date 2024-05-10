@@ -18,6 +18,10 @@ def new_task():
     ui.update_time_cbox.addItems(upd_options.keys()) #add update time options to the combobox
     ui.filter_box.setEnabled(False) #disable the filter options comboboxes while no link is provided
 
+    def call_error_message(text): #call the error message
+        link_error.err_text.setText(text)
+        link_error.show()
+
     def add_filters(recieved_array): #add receved filter options to the comboboxes
         ui.year_min_cbox.addItems(recieved_array[0])
         ui.year_max_cbox.addItems(recieved_array[1])
@@ -39,7 +43,7 @@ def new_task():
             ui.filter_box.setEnabled(True) #enable the filter options comboboxes
         else:
             print("Invalid link")
-            link_error.show()
+            call_error_message("Wrong link. Note: the link should start with https://www.ss.com/en/transport/cars/")
 
 
     def save():
@@ -70,6 +74,7 @@ def new_task():
     ui.cancel_button.clicked.connect(app.quit) #cancel button - exit the app
     link_error.ok_button.clicked.connect(link_error.close) #ok button on the link error message - close the message
 
+    #launch the app
     ui.show()
     app.exec()
 
