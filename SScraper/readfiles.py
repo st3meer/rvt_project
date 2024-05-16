@@ -1,9 +1,10 @@
+path = "saveddata/" #path to save folder
 def compareCSV(filename):
     # Compare two CSV files
     # Return 0 if they are the same
     # Return new link list if they are different
-    file1 = open(filename + ".csv", "r", encoding="utf-16") #open the files
-    file2 = open(filename + "Old.csv", "r", encoding="utf-16")
+    file1 = open(path + filename + ".csv", "r", encoding="utf-16") #open the files
+    file2 = open(path + filename + "Old.csv", "r", encoding="utf-16")
 
     new_links = [] #list for new links
 
@@ -25,3 +26,19 @@ def compareCSV(filename):
                 new_links.append(i) #add the new links to the list
 
     return new_links #return the new links
+
+def get_task_list():
+    # Get the list of tasks from the config file
+    file = open(path + "general.config", "r") #open the file
+    tasks = [] #list for tasks
+    for line in file: #read the file
+        tasks.append(line) #add the tasks to the list
+    return tasks #return the list of tasks
+
+def get_task_config(taskname):
+    # Get the configuration of the task
+    file = open(path + taskname + ".config", "r", encoding="utf-16") #open the file
+    config = [] #list for the configuration
+    for line in file: #read the file
+        config.append(line) #add the configuration to the list
+    return config #return the list of configuration

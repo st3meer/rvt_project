@@ -11,6 +11,8 @@ def parseByFilter(urlInput, priceMin, priceMax, yearMin, yearMax, engOptMin, eng
     for_count = 0
     pages = 0
     #page_counter = 1
+    if not urlInput.endswith("/"): # check if the url ends with a slash
+        urlInput += "/" # add a slash to the end of the url
     url = urlInput + "filter/" # add the filter to the url
     print("iurl: ", url)
     browser = mechanicalsoup.StatefulBrowser()
@@ -21,25 +23,25 @@ def parseByFilter(urlInput, priceMin, priceMax, yearMin, yearMax, engOptMin, eng
 
     browser.select_form('form[name="filter_frm"]') # select the form
     # setting the filter options
-    if priceMin != None:
+    if priceMin != '':
         browser["topt[8][min]"] = priceMin # set the minimum price
-    if priceMax != None:
+    if priceMax != '':
         browser["topt[8][max]"] = priceMax # set the maximum price
-    if yearMin != None:
+    if yearMin != '':
         browser["topt[18][min]"] = yearMin # set the minimum year
-    if yearMax != None:
+    if yearMax != '':
         browser["topt[18][max]"] = yearMax # set the maximum year
-    if engOptMin != None:
+    if engOptMin != '':
         browser["topt[15][min]"] = engOptMin # set the minimum engine displacement
-    if engOptMax != None:
+    if engOptMax != '':
         browser["topt[15][max]"] = engOptMax # set the maximum engine displacement
-    if engType != None:
+    if engType != '':
         browser["opt[34]"] = engType # set the engine type
-    if gbxType != None:
+    if gbxType != '':
         browser["opt[35]"] = gbxType # set the gearbox type
-    if bodyOpt != None:
+    if bodyOpt != '':
         browser["opt[32]"] = bodyOpt # set the body type
-    if clrOpt != None:
+    if clrOpt != '':
         browser["opt[17]"] = clrOpt # set the color 
 
     resposne = browser.submit_selected() # submit the form
