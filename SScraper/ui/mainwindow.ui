@@ -38,42 +38,9 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="edit_task_button">
-            <property name="text">
-             <string>Edit</string>
-            </property>
-           </widget>
-          </item>
-          <item>
            <widget class="QPushButton" name="delete_task_button">
             <property name="text">
              <string>Delete</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QFrame" name="frame_2">
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <item>
-           <widget class="QPushButton" name="import_button">
-            <property name="text">
-             <string>Import</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="export_button">
-            <property name="text">
-             <string>Export</string>
             </property>
            </widget>
           </item>
@@ -127,20 +94,6 @@
            <widget class="QPushButton" name="update_button">
             <property name="text">
              <string>Update</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="export_new">
-            <property name="text">
-             <string>Export new links</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="export_all">
-            <property name="text">
-             <string>Export all links</string>
             </property>
            </widget>
           </item>

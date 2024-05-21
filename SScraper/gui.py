@@ -67,6 +67,15 @@ def new_task(): #create a new task window
 
     def save():
         password = '0'
+        min_price = ui.price_min_field.text()
+        max_price = ui.price_max_field.text()
+        try:
+            float(min_price)
+            float(max_price)
+        except:
+            print("Price not provided")
+            call_error_message("price not provided. Price can only be a number")
+            return
         if ui.use_pass_button.isChecked() == True:
             if ui.passwordfield.text() == '':
                 print("Password not provided")
@@ -82,8 +91,8 @@ def new_task(): #create a new task window
         save_array.append(ui.name_field.text())  #name
         save_array.append(ui.link_field.text()) #link
         save_array.append(0) #unused field (for next versions)
-        save_array.append(ui.price_min_field.text()) #min price
-        save_array.append(ui.price_max_field.text()) #max price
+        save_array.append(min_price) #min price
+        save_array.append(max_price) #max price
         save_array.append(ui.year_min_cbox.currentText()) #min year
         save_array.append(ui.year_max_cbox.currentText()) #max year
         save_array.append(ui.eng_min_cbox.currentText()) #min engine displacement
