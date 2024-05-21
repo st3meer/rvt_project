@@ -37,15 +37,29 @@ def writeConfigFile(isActive, name, url, upd_period, priceMin, priceMax, yearMin
         f.write(str(bodyOpt) + '\n')
         f.write(str(clrOpt) + '\n')
 
-def addTask(taskname):
+def addTask(taskname, password): #add a task to the general.config file
     configfile = open(path + "general.config", "r")
     config_contents = configfile.readlines()
     configfile.close()
     if taskname not in config_contents:
-        config_contents.append(taskname)
+        config_contents.append(taskname + ";" + password + ";")
         configfile = open(path + "general.config", "w")
         configfile.writelines(config_contents)
         configfile.write("\n")
+        configfile.close()
+        return True
+    else:
+        return False
+    
+def removeTask(taskname): #remove the task from the general.config file
+    configfile = open(path + "general.config", "r") 
+    config_contents = configfile.readlines()
+    configfile.close()
+    taskname += '\n'
+    if taskname in config_contents:
+        config_contents.remove(taskname)
+        configfile = open(path + "general.config", "w")
+        configfile.writelines(config_contents)
         configfile.close()
         return True
     else:

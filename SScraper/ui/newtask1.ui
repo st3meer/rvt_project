@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>379</width>
-    <height>674</height>
+    <height>582</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -85,31 +85,6 @@
        </widget>
       </item>
       <item>
-       <widget class="QFrame" name="frame_2">
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_8">
-         <item>
-          <widget class="QLabel" name="label_12">
-           <property name="text">
-            <string>Update period</string>
-           </property>
-           <property name="buddy">
-            <cstring>update_time_cbox</cstring>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QComboBox" name="update_time_cbox"/>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item>
        <widget class="QFrame" name="frame_3">
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -119,7 +94,7 @@
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_9">
          <item>
-          <widget class="QCheckBox" name="checkBox">
+          <widget class="QCheckBox" name="use_pass_button">
            <property name="text">
             <string>Use password</string>
            </property>
@@ -127,35 +102,6 @@
          </item>
          <item>
           <widget class="QLineEdit" name="passwordfield">
-           <property name="text">
-            <string/>
-           </property>
-           <property name="echoMode">
-            <enum>QLineEdit::Password</enum>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item>
-       <widget class="QFrame" name="frame_6">
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_12">
-         <item>
-          <widget class="QLabel" name="label_16">
-           <property name="text">
-            <string>Email for notifications</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="passwordfield_2">
            <property name="text">
             <string/>
            </property>

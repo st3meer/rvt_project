@@ -1,1 +1,1 @@
-python /sourcecode/py/main.py
+python SScraper\gui.py
